@@ -15,6 +15,8 @@ namespace FinalProject
         public Form1()
         {
             InitializeComponent();
+            // Form_HabitChecking testForm = new Form_HabitChecking();
+            // testForm.Show();
         }
     }
 }
