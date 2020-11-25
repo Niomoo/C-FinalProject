@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -23,6 +24,17 @@ namespace FinalProject
         public Form_HabitChecking()
         {
             InitializeComponent();
+            Thread thread = new Thread(new ThreadStart(new Action(delegate
+            {
+
+                for (int i = 0; i < 76; i++)
+                {
+                    Thread.Sleep(i);
+                    this.circleProgressBar.Progress = i + 1;
+                }
+            })));
+            thread.IsBackground = true;
+            thread.Start();
         }
 
         private void Form_HabitChecking_MouseDown(object sender, MouseEventArgs e)
@@ -31,9 +43,7 @@ namespace FinalProject
             SendMessage(this.Handle, WM_SYSCOMMAND, SC_MOVE + HTCAPTION, 0);
         }
 
-        private void button_back_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        private void button_back_Click(object sender, EventArgs e) => this.Close();
+
     }
 }
