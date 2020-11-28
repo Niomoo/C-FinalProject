@@ -10,23 +10,19 @@ namespace FinalProject
 {
     public partial class CircleProgressBar : Control
     {
-        private Pen penBottom = null;//底层画笔
-        private Pen penTop = null;//上层画笔
-        private Pen penFinished = null;//√画笔
+        private Pen penBottom = null;//底層
+        private Pen penTop = null;//上層
+        private Pen penFinished = null;//√的圖
 
-
-        //解决控件批量更新时带来的闪烁
+        
         protected override CreateParams CreateParams { get { CreateParams cp = base.CreateParams; cp.ExStyle |= 0x02000000; return cp; } }
-
-        /// <summary>
-        /// /圆形进度条
-        /// </summary>
+        
         public CircleProgressBar()
         {
             InitControl();
-            //初始化变量
-            this.penBottom = new Pen(this.bottomColor, 0);
-            this.penTop = new Pen(this.topColor, 80);
+            //初始值
+            this.penBottom = new Pen(this.bottomColor, 30);
+            this.penTop = new Pen(this.topColor, 30);
             this.penFinished = new Pen(this.finishedColor, 5);
 
             this.SizeChanged += delegate
@@ -34,9 +30,7 @@ namespace FinalProject
                 this.Invalidate();
             };
         }
-        /// <summary>
-        /// 初始化控件参数
-        /// </summary>
+        /// 初始化
         private void InitControl()
         {
             this.Width = 350;
@@ -48,10 +42,8 @@ namespace FinalProject
         //-------------------值
         private int maxValue = 100;
         private int progress = 50;
-
-        /// <summary>
+        
         /// 最大值
-        /// </summary>
         public int MaxValue
         {
             get
@@ -68,10 +60,8 @@ namespace FinalProject
                 this.Invalidate();
             }
         }
-
-        /// <summary>
-        /// 进度值
-        /// </summary>
+        
+        /// 進度值
         public int Progress
         {
             get { return this.progress; }
@@ -123,7 +113,7 @@ namespace FinalProject
         }
         #endregion
 
-        //对Control进行绘制
+        //Control進行繪製
         protected override void OnPaint(PaintEventArgs e)
         {
             //base.OnPaint(e);
@@ -136,48 +126,48 @@ namespace FinalProject
             {
                 return;
             }
-            g.SmoothingMode = SmoothingMode.AntiAlias;  //使绘图质量最高，即消除锯齿
+            g.SmoothingMode = SmoothingMode.AntiAlias;  //消除鋸齒
             g.InterpolationMode = InterpolationMode.HighQualityBicubic;
             g.CompositingQuality = CompositingQuality.HighQuality;
-            //1、绘制背景
+            //1、繪製背景
             g.FillRectangle(new SolidBrush(this.BackColor), new Rectangle(0, 0, this.Width, this.Height));
-            int size = Math.Min(this.Width, this.Height);//圆的大小
-            //2、绘制底层（最大值）
-            int sizeOffset = 50;//进度条距离最外侧的偏移量
-            Rectangle rectangle = new Rectangle(this.Width / 2 - size / 2 + sizeOffset, this.Height / 2 - size / 2 + sizeOffset, size - (sizeOffset * 2), size - (sizeOffset * 2));//计算圆的范围
-            // g.DrawArc(this.penBottom, rectangle, 0, 360);//绘制底层条
-            //g.DrawRectangle(this.penBottom, rectangleBottom);//绘制标识测试区
-            //3、绘制上层圆（进度条）
-            decimal topAngle = (this.progress * 1.0M / this.maxValue) * 360M;//计算进度条划过的度数
-            g.DrawArc(this.penTop, rectangle, -93, (int)topAngle);//绘制进度条
-            //4、绘制进度显示值
+            int size = Math.Min(this.Width, this.Height);//圓的大小
+            //2、繪製底层（最大值）
+            int sizeOffset = 50;//進度條距離最外側的偏移量
+            Rectangle rectangle = new Rectangle(this.Width / 2 - size / 2 + sizeOffset, this.Height / 2 - size / 2 + sizeOffset, size - (sizeOffset * 2), size - (sizeOffset * 2));//計算圓的範圍
+            g.DrawArc(this.penBottom, rectangle, 0, 360);//繪製底層進度條
+            //g.DrawRectangle(this.penBottom, rectangleBottom);//繪製標示測試區
+            //3、繪製上層進度條
+            decimal topAngle = (this.progress * 1.0M / this.maxValue) * 360M;//計算進度條劃過的度數
+            g.DrawArc(this.penTop, rectangle, -93, (int)topAngle);//繪製進度條
+            //4、繪製進度調顯示值
             if (this.progress == maxValue)
             {
-                /*//绘制完成标志
+                /*//完成
                 int lineOffset = (int)(size * (1 / 9.5M));//对勾交叉点距离中心点的偏移量
 
-                //计算左半对勾的结束位置
+                //計算左半勾的結束位置
                 double x1 = (this.Width / 2) + (size * (1 / 8D)) * Math.Cos((90 * 2 + 90 / 2D) * Math.PI / 180);
                 double y1 = (this.Height / 2 + lineOffset) + (size * (1 / 8D)) * Math.Sin((90 * 2 + 90 / 2D) * Math.PI / 180);
 
-                //计算右半对勾的结束位置
+                //計算右半勾的結束位置
                 double x2 = (this.Width / 2) + (size * (1 / 4D)) * Math.Cos((90 * 3 + 90 / 2D) * Math.PI / 180);
                 double y2 = (this.Height / 2 + lineOffset) + (size * (1 / 4D)) * Math.Sin((90 * 3 + 90 / 2D) * Math.PI / 180);
 
-                //绘制对勾
+                //繪製整個勾
                 var lines = new Point[] {
                     new Point((int)x1,(int)y1),
                     new Point((this.Width / 2 ) , (this.Height / 2 )+ lineOffset),
                     new Point((int)x2,(int)y2) };
                 var graphicsPath = new GraphicsPath(lines, new byte[] { (byte)PathPointType.Line, (byte)PathPointType.Line, (byte)PathPointType.Line });
                 g.DrawPath(this.penFinished, graphicsPath);*/
-                SizeF proValSize = g.MeasureString(this.progress.ToString() + "%", this.Font);//计算文字的范围
+                SizeF proValSize = g.MeasureString(this.progress.ToString() + "%", this.Font);//計算文字範圍
                 g.DrawString(this.progress.ToString() + "%", this.Font, new SolidBrush(this.ForeColor), rectangle.X + rectangle.Width / 2 - proValSize.Width / 2, rectangle.Y + rectangle.Height / 2 - proValSize.Height / 2);
             }
             else
             {
-                //绘制进度值
-                SizeF proValSize = g.MeasureString(this.progress.ToString() + "%", this.Font);//计算文字的范围
+                //繪製進度條
+                SizeF proValSize = g.MeasureString(this.progress.ToString() + "%", this.Font);//計算文字範圍
                 g.DrawString(this.progress.ToString() + "%", this.Font, new SolidBrush(this.ForeColor), rectangle.X + rectangle.Width / 2 - proValSize.Width / 2, rectangle.Y + rectangle.Height / 2 - proValSize.Height / 2);
             }
         }

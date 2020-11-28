@@ -24,19 +24,50 @@ namespace FinalProject
         public Form_HabitChecking()
         {
             InitializeComponent();
+            // 畫進度條
             Thread thread = new Thread(new ThreadStart(new Action(delegate
             {
 
                 for (int i = 0; i < 76; i++)
                 {
-                    Thread.Sleep(i);
+                    Thread.Sleep(i/5);
+                    this.circleProgressBar.Progress = i + 1;
+                }
+            })));
+            thread.IsBackground = true;
+            thread.Start();
+
+            Bitmap waterIcon = new Bitmap("../../../res/habitCheckingRes/waterIcon.png");
+            Bitmap studyIcon = new Bitmap("../../../res/habitCheckingRes/studyIcon.png");
+            Bitmap fitnessIcon = new Bitmap("../../../res/habitCheckingRes/fitnessIcon.png");
+            Bitmap meditationIcon = new Bitmap("../../../res/habitCheckingRes/meditationIcon.png");
+            button1.BackgroundImage = waterIcon;
+            button2.BackgroundImage = studyIcon;
+            button3.BackgroundImage = fitnessIcon;
+            button4.BackgroundImage = meditationIcon;
+            button1.Click += new EventHandler(this.button_Click);
+            button2.Click += new EventHandler(this.button_Click);
+            button3.Click += new EventHandler(this.button_Click);
+            button4.Click += new EventHandler(this.button_Click);
+        }
+        private void button_Click(object sender, System.EventArgs e)
+        {
+            Random random = new Random();
+            int full = random.Next(0, 101);
+            int sleep = 1000 / full;
+            // 畫進度條
+            Thread thread = new Thread(new ThreadStart(new Action(delegate
+            {
+
+                for (int i = 0; i < full; i++)
+                {
+                    Thread.Sleep(sleep);
                     this.circleProgressBar.Progress = i + 1;
                 }
             })));
             thread.IsBackground = true;
             thread.Start();
         }
-
         private void Form_HabitChecking_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
