@@ -18,5 +18,11 @@ namespace FinalProject
             Form_HabitChecking testForm = new Form_HabitChecking();
             testForm.Show();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            txtDate.Text = DateTime.Now.ToString("MMdd");
+            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
     }
 }

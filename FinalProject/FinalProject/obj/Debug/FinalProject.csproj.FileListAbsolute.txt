@@ -18,3 +18,4 @@ C:\Users\USER\Desktop\1091_視窗程式設計\C-FinalProject\FinalProject\FinalP
 C:\Users\USER\Desktop\1091_視窗程式設計\C-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.CoreCompileInputs.cache
 C:\Users\USER\Desktop\1091_視窗程式設計\C-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.exe
 C:\Users\USER\Desktop\1091_視窗程式設計\C-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.pdb
+C:\Users\USER\Desktop\1091_視窗程式設計\C-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.MainForm.resources
