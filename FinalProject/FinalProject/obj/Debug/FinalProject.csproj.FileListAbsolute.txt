@@ -8,3 +8,13 @@ C:\Users\User\Desktop\C-FinalProject\FinalProject\FinalProject\bin\Debug\FinalPr
 C:\Users\User\Desktop\C-FinalProject\FinalProject\FinalProject\bin\Debug\FinalProject.pdb
 C:\Users\User\Desktop\C-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.exe
 C:\Users\User\Desktop\C-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.pdb
+C:\Users\USER\Desktop\1091_視窗程式設計\C-FinalProject\FinalProject\FinalProject\bin\Debug\FinalProject.exe.config
+C:\Users\USER\Desktop\1091_視窗程式設計\C-FinalProject\FinalProject\FinalProject\bin\Debug\FinalProject.exe
+C:\Users\USER\Desktop\1091_視窗程式設計\C-FinalProject\FinalProject\FinalProject\bin\Debug\FinalProject.pdb
+C:\Users\USER\Desktop\1091_視窗程式設計\C-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.csprojAssemblyReference.cache
+C:\Users\USER\Desktop\1091_視窗程式設計\C-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.Form_HabitChecking.resources
+C:\Users\USER\Desktop\1091_視窗程式設計\C-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.Properties.Resources.resources
+C:\Users\USER\Desktop\1091_視窗程式設計\C-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.GenerateResource.cache
+C:\Users\USER\Desktop\1091_視窗程式設計\C-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\1091_視窗程式設計\C-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.exe
+C:\Users\USER\Desktop\1091_視窗程式設計\C-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.pdb
