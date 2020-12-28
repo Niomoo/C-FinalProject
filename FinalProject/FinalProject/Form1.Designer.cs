@@ -30,23 +30,22 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.yearCalendar = new System.Windows.Forms.MonthCalendar();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.tab = new System.Windows.Forms.TabControl();
-            this.Year = new System.Windows.Forms.TabPage();
-            this.Month = new System.Windows.Forms.TabPage();
-            this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
-            this.Week = new System.Windows.Forms.TabPage();
-            this.Day = new System.Windows.Forms.TabPage();
             this.txtDate = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.Month = new System.Windows.Forms.TabPage();
+            this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
+            this.tab = new System.Windows.Forms.TabControl();
+            this.yearCalendar = new System.Windows.Forms.MonthCalendar();
+            this.Year = new System.Windows.Forms.TabPage();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            this.Month.SuspendLayout();
             this.tab.SuspendLayout();
             this.Year.SuspendLayout();
-            this.Month.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -68,77 +67,6 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Balance";
-            // 
-            // yearCalendar
-            // 
-            this.yearCalendar.CalendarDimensions = new System.Drawing.Size(4, 3);
-            this.yearCalendar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.yearCalendar.Location = new System.Drawing.Point(3, 3);
-            this.yearCalendar.Name = "yearCalendar";
-            this.yearCalendar.ShowToday = false;
-            this.yearCalendar.TabIndex = 3;
-            // 
-            // tab
-            // 
-            this.tab.Controls.Add(this.Year);
-            this.tab.Controls.Add(this.Month);
-            this.tab.Controls.Add(this.Week);
-            this.tab.Controls.Add(this.Day);
-            this.tab.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tab.Location = new System.Drawing.Point(338, 24);
-            this.tab.Name = "tab";
-            this.tab.SelectedIndex = 0;
-            this.tab.Size = new System.Drawing.Size(1365, 789);
-            this.tab.TabIndex = 4;
-            // 
-            // Year
-            // 
-            this.Year.Controls.Add(this.yearCalendar);
-            this.Year.Location = new System.Drawing.Point(4, 39);
-            this.Year.Name = "Year";
-            this.Year.Padding = new System.Windows.Forms.Padding(3);
-            this.Year.Size = new System.Drawing.Size(1357, 746);
-            this.Year.TabIndex = 0;
-            this.Year.Text = "Year";
-            this.Year.UseVisualStyleBackColor = true;
-            // 
-            // Month
-            // 
-            this.Month.Controls.Add(this.monthCalendar2);
-            this.Month.Location = new System.Drawing.Point(4, 39);
-            this.Month.Name = "Month";
-            this.Month.Padding = new System.Windows.Forms.Padding(3);
-            this.Month.Size = new System.Drawing.Size(1357, 746);
-            this.Month.TabIndex = 1;
-            this.Month.Text = "Month";
-            this.Month.UseVisualStyleBackColor = true;
-            // 
-            // monthCalendar2
-            // 
-            this.monthCalendar2.Location = new System.Drawing.Point(12, 12);
-            this.monthCalendar2.MaxDate = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
-            this.monthCalendar2.MinDate = new System.DateTime(2020, 12, 1, 0, 0, 0, 0);
-            this.monthCalendar2.Name = "monthCalendar2";
-            this.monthCalendar2.ShowToday = false;
-            this.monthCalendar2.TabIndex = 0;
-            // 
-            // Week
-            // 
-            this.Week.Location = new System.Drawing.Point(4, 39);
-            this.Week.Name = "Week";
-            this.Week.Size = new System.Drawing.Size(1357, 746);
-            this.Week.TabIndex = 2;
-            this.Week.Text = "Week";
-            this.Week.UseVisualStyleBackColor = true;
-            // 
-            // Day
-            // 
-            this.Day.Location = new System.Drawing.Point(4, 39);
-            this.Day.Name = "Day";
-            this.Day.Size = new System.Drawing.Size(1357, 746);
-            this.Day.TabIndex = 3;
-            this.Day.Text = "Day";
-            this.Day.UseVisualStyleBackColor = true;
             // 
             // txtDate
             // 
@@ -188,11 +116,76 @@
             this.pictureBox.TabIndex = 9;
             this.pictureBox.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
+            this.button1.Location = new System.Drawing.Point(1892, 444);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(150, 62);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "習慣養成";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // Month
+            // 
+            this.Month.BackColor = System.Drawing.Color.GhostWhite;
+            this.Month.Controls.Add(this.monthCalendar2);
+            this.Month.Location = new System.Drawing.Point(4, 39);
+            this.Month.Name = "Month";
+            this.Month.Padding = new System.Windows.Forms.Padding(3);
+            this.Month.Size = new System.Drawing.Size(1357, 746);
+            this.Month.TabIndex = 1;
+            this.Month.Text = "Month";
+            // 
+            // monthCalendar2
+            // 
+            this.monthCalendar2.CalendarDimensions = new System.Drawing.Size(4, 3);
+            this.monthCalendar2.Location = new System.Drawing.Point(28, 27);
+            this.monthCalendar2.MaxDate = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
+            this.monthCalendar2.MinDate = new System.DateTime(2020, 12, 1, 0, 0, 0, 0);
+            this.monthCalendar2.Name = "monthCalendar2";
+            this.monthCalendar2.ShowToday = false;
+            this.monthCalendar2.TabIndex = 0;
+            // 
+            // tab
+            // 
+            this.tab.Controls.Add(this.Year);
+            this.tab.Controls.Add(this.Month);
+            this.tab.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tab.Location = new System.Drawing.Point(338, 24);
+            this.tab.Name = "tab";
+            this.tab.SelectedIndex = 0;
+            this.tab.Size = new System.Drawing.Size(1365, 789);
+            this.tab.TabIndex = 4;
+            // 
+            // yearCalendar
+            // 
+            this.yearCalendar.CalendarDimensions = new System.Drawing.Size(4, 3);
+            this.yearCalendar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.yearCalendar.Location = new System.Drawing.Point(3, 3);
+            this.yearCalendar.Name = "yearCalendar";
+            this.yearCalendar.ShowToday = false;
+            this.yearCalendar.TabIndex = 3;
+            // 
+            // Year
+            // 
+            this.Year.BackColor = System.Drawing.Color.GhostWhite;
+            this.Year.Controls.Add(this.yearCalendar);
+            this.Year.Location = new System.Drawing.Point(4, 39);
+            this.Year.Name = "Year";
+            this.Year.Padding = new System.Windows.Forms.Padding(3);
+            this.Year.Size = new System.Drawing.Size(1357, 746);
+            this.Year.TabIndex = 0;
+            this.Year.Text = "Year";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2200, 890);
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.ClientSize = new System.Drawing.Size(2112, 890);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -204,10 +197,10 @@
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            this.Month.ResumeLayout(false);
             this.tab.ResumeLayout(false);
             this.Year.ResumeLayout(false);
-            this.Month.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,19 +210,18 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.MonthCalendar yearCalendar;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.TabControl tab;
-        private System.Windows.Forms.TabPage Year;
-        private System.Windows.Forms.TabPage Month;
-        private System.Windows.Forms.TabPage Week;
-        private System.Windows.Forms.TabPage Day;
         private System.Windows.Forms.Label txtDate;
-        private System.Windows.Forms.MonthCalendar monthCalendar2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TabPage Month;
+        private System.Windows.Forms.MonthCalendar monthCalendar2;
+        private System.Windows.Forms.TabControl tab;
+        private System.Windows.Forms.TabPage Year;
+        private System.Windows.Forms.MonthCalendar yearCalendar;
     }
 }
 
